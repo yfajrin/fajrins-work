@@ -10,7 +10,30 @@
     top: 90px;
     right: 40px;
     z-index: 5;
-  
+    
+    .total-container {
+      padding: 10px 10px;
+      text-align: right;
+      font-size: 18px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #ffffff;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius:20%;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
     .empty-message {
       font-size: 18px;
       margin: 50px auto;
