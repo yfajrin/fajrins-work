@@ -14,7 +14,8 @@ export const DirectoryBodyContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: none;
+  border-radius: 10px;
   background-color: white;
   opacity: 0.7;
   position: absolute;
@@ -40,7 +41,8 @@ export const DirectoryContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  border: none;
+  border-radius: 10px;
   margin: 0 7.5px 15px;
   overflow: hidden;
 

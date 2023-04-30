@@ -7,11 +7,14 @@ flex-direction: column;
 height: 350px;
 align-items: center;
 position: relative;
+margin-bottom: 50px;
+
 img {
   width: 100%;
   height: 95%;
   object-fit: cover;
   margin-bottom: 5px;
+  border-radius:10px;
 }
 button {
   width: 80%;
@@ -36,7 +39,7 @@ export const FooterStyle = styled.div`
   height: 5%;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 20px;
 ` 
 
 export const NameStyle = styled.span`
@@ -46,4 +49,11 @@ export const NameStyle = styled.span`
 
 export const PriceStyle = styled.span`
   width: 10%;
+`
+
+export const FlavorStyle = styled.div`
+width: 100%;  
+padding-top: 10px;
+padding-bottom: 10px;
+text-align: left;
 `
