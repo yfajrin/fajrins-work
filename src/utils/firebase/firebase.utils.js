@@ -19,6 +19,7 @@ import {
     getDocs
 } from 'firebase/firestore'
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyCfQ2ouEG1snBX5UflyEr3TvE0F8SXesKw",
     authDomain: "fajrins-work-db.firebaseapp.com",
@@ -28,8 +29,7 @@ const firebaseConfig = {
     appId: "1:34754191744:web:a7cc96fef50abce30ba165"
   };
 
-const firebaseApp = initializeApp(firebaseConfig);
-
+  const firebaseApp = initializeApp(firebaseConfig);
 const googleProvider = new GoogleAuthProvider();
   googleProvider.setCustomParameters({
     prompt: "select_account"
@@ -56,13 +56,8 @@ export const getCategoriesAndDocuments = async () => {
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
-  const categoryMap = querySnapshot.docs.reduce((accumulator, docSnapshot) => {
-    const { title, items } = docSnapshot.data();
-    accumulator[title.toLowerCase()] = items;
-    return accumulator;
-  }, {});
-
-  return categoryMap;
+  return querySnapshot.docs.map(docSnapshot => docSnapshot.data())
+  
 }
 
 export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
@@ -97,10 +92,12 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
     return await createUserWithEmailAndPassword(auth, email, password)
 }
 
+
+
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if(!email || !password) return;
-
-  return await signInWithEmailAndPassword(auth, email, password)
+  
+  return await signInWithEmailAndPassword(auth, email, password);
 }
 
 export const signOutUser = async () => await signOut(auth);

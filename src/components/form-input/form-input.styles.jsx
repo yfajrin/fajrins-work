@@ -1,9 +1,9 @@
-import styled, { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 const subColor = 'grey';
 const mainColor = 'black';
 
-export const shrinkLabelStyles = css`
+const shrinkLabelStyles = css`
   top: -14px;
   font-size: 12px;
   color: ${mainColor};
@@ -18,8 +18,7 @@ export const FormInputLabel = styled.label`
   left: 5px;
   top: 10px;
   transition: 300ms ease all;
-
-  ${({shrink}) => shrink & shrinkLabelStyles};
+  ${({ shrink }) => shrink && shrinkLabelStyles};
 `;
 
 export const Input = styled.input`
@@ -34,14 +33,12 @@ export const Input = styled.input`
   border-radius: 0;
   border-bottom: 1px solid ${subColor};
   margin: 25px 0;
-
-    &:focus {
-      outline: none;
-    }
-
-    &:focus ~ ${FormInputLabel} {
-      ${shrinkLabelStyles};
-    }
+  &:focus {
+    outline: none;
+  }
+  &:focus ~ ${FormInputLabel} {
+    ${shrinkLabelStyles};
+  }
 `;
 
 export const Group = styled.div`
