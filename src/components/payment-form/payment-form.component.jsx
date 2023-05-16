@@ -15,11 +15,29 @@ const PaymentForm = () => {
         }
     }
 
+    const CARD_ELEMENT_OPTIONS = {
+        style: {
+          base: {
+            color: "#32325d",
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSmoothing: "antialiased",
+            fontSize: "16px",
+            "::placeholder": {
+              color: "#aab7c4",
+            },
+          },
+          invalid: {
+            color: "#fa755a",
+            iconColor: "#fa755a",
+          },
+        },
+      };
+
     return (
         <PaymentFormContainer>
             <FormContainer>
                 <h2>Credit card payment: </h2>
-                <CardElement />
+                <CardElement options={CARD_ELEMENT_OPTIONS}/>
                 <Button buttonType={BUTTON_TYPE_CLASSES.inverted}>Pay now</Button>
             </FormContainer>
         </PaymentFormContainer>
