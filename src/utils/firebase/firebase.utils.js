@@ -30,7 +30,7 @@ const firebaseConfig = {
   };
 
   const firebaseApp = initializeApp(firebaseConfig);
-const googleProvider = new GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
   googleProvider.setCustomParameters({
     prompt: "select_account"
   })
@@ -113,7 +113,7 @@ export const getCurrentUser = () => {
         resolve(userAuth);
       },
       reject
-    )
-  })
+    );
+  });
 
-}
+};
